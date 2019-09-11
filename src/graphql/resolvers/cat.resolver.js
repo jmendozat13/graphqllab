@@ -2,7 +2,6 @@ import { Cat } from '../../models/cat'
 
 export const CatResolver = {
     Query: {
-        hello: () => "Hello",
         cats: async () => Cat.find()
     },
     Mutation: {
