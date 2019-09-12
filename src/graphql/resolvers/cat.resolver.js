@@ -1,6 +1,6 @@
 import { Cat } from '../../models/cat'
 
-export const CatResolver = {
+export default {
     Query: {
         cats: async () => Cat.find()
     },

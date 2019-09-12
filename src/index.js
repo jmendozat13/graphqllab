@@ -1,12 +1,18 @@
-import { ApolloServer } from 'apollo-server'
+import { ApolloServer, makeExecutableSchema } from 'apollo-server'
 import mongoose from 'mongoose'
-import { schema } from './graphql/schema'
+import resolvers from './graphql/resolvers'
+import typeDefs from './graphql/typedefs'
 import 'dotenv/config'
 
 (async () => {
 
     await mongoose.connect(process.env.DB_CONNECTION
         , { useNewUrlParser: true })
+
+    const schema = makeExecutableSchema({
+        typeDefs,
+        resolvers,
+    })
 
     const server = new ApolloServer({ schema });
 
