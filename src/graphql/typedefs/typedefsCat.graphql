@@ -1,0 +1,22 @@
+type Cat {
+    id: ID!
+    name: String!
+}
+
+type DeleteResponse {
+    ok: Boolean!
+}
+
+type Query {
+    cats: [Cat!]!
+}
+
+type Mutation {
+    createCat(name: String!): Cat!
+    editCat(id: ID, name: String): Cat
+    deleteCat(id: ID): DeleteResponse
+}
+        
+        
+        
+        
