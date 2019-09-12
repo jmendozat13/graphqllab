@@ -1,11 +1,7 @@
 import { gql } from 'apollo-server'
 
 export const CatTypeDefs = gql`
-        type Query {
-            hello: String!
-            cats: [Cat!]!
-        }
-       
+             
         type Mutation {
             createCat(name: String!): Cat!
             editCat(id: ID, name: String): Cat
